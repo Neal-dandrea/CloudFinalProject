@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+  <h2>Search Results</h2>
+  <form action="/search" method="post">
+    Household Number: <input name="household"><br>
+    <button type="submit">Search</button>
+  </form>
+  {% if results %}
+  <h3>Results:</h3>
+  <table border="1">
+    <tr>
+      <th>HSHD</th><th>Loyalty</th><th>Age</th><th>Marital</th><th>Income</th>
+      <th>Homeowner</th><th>Composition</th><th>Size</th><th>Children</th>
+      <th>Basket</th><th>Date</th><th>Product</th><th>Spend</th><th>Units</th>
+      <th>Region</th><th>Week</th><th>Year</th>
+      <th>Department</th><th>Commodity</th><th>Brand</th><th>Organic</th>
+    </tr>
+    {% for row in results %}
+      <tr>
+        {% for item in row %}
+          <td>{{ item }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+  <br><br>
+  <a href="/menu"><button>Back to Menu</button></a>
+</body>
+</html>
