@@ -1,3 +1,6 @@
 Flask
+Flask-Login
 pyodbc
 python-dotenv
+pandas
+SQLAlchemy

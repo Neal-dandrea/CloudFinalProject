@@ -1,0 +1,19 @@
+<!doctype html>
+<title>{{title}}</title>
+<h2>{{title}}</h2>
+<table border="1">
+  <tr>
+    {% for col in df.columns %}
+      <th>{{col}}</th>
+    {% endfor %}
+  </tr>
+  {% for row in df.itertuples(index=False) %}
+    <tr>
+      {% for cell in row %}
+        <td>{{cell}}</td>
+      {% endfor %}
+    </tr>
+  {% endfor %}
+</table>
+<a href="{{ url_for('search') }}">Search another household</a> |
+<a href="{{ url_for('upload') }}">Upload new data</a>

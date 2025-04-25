@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head><title>Upload</title></head>
-<body>
-  <h2>Upload CSV File</h2>
-  <form method="post" enctype="multipart/form-data">
-    <label for="dataset_type">Select Dataset Type:</label>
-    <select name="dataset_type">
-      <option value="transactions">Transactions</option>
-      <option value="households">Households</option>
-      <option value="products">Products</option>
-    </select><br><br>
-    <input type="file" name="file"><br><br>
-    <button type="submit">Upload</button>
-  </form> 
-  <br><br>
-  <a href="/menu"><button>Back to Menu</button></a> 
-</body>
-</html>
+<!doctype html>
+<title>Upload New Data</title>
+<h2>Upload CSVs to Reload Data</h2>
+<form method="post" enctype="multipart/form-data">
+  Households CSV: <input type="file" name="households" accept=".csv" required><br>
+  Products CSV:   <input type="file" name="products" accept=".csv" required><br>
+  Transactions CSV:<input type="file" name="transactions" accept=".csv" required><br><br>
+  <input type="submit" value="Upload & Reload">
+</form>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+      {% for m in messages %}<li>{{m}}</li>{% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}

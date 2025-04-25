@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Login</title>
+<h2>Login</h2>
+<form method="post">
+  Username: <input name="username" required><br><br>
+  Password: <input type="password" name="password" required><br><br>
+  Email:    <input type="email"    name="email"    required><br><br>
+  <button type="submit">Log In</button>
+</form>
+{% with messages = get_flashed_messages(category_filter=["danger"]) %}
+  {% if messages %}
+    <p style="color:red">{{ messages[0] }}</p>
+  {% endif %}
+{% endwith %}

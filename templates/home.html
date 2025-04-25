@@ -1,0 +1,10 @@
+<!doctype html>
+<title>Home</title>
+<h2>Welcome! Choose a step:</h2>
+<ul>
+  <li><a href="{{ url_for('sample10') }}">3. Sample Data Pull (HSHD_NUM 10)</a></li>
+  <li><a href="{{ url_for('search') }}">4. Search by Household</a></li>
+  <li><a href="{{ url_for('upload') }}">5. Upload New Data</a></li>
+  <li><a href="{{ url_for('dashboard') }}">6. Dashboard</a></li>
+</ul>
+<p><a href="{{ url_for('logout') }}">Log out</a></p>
