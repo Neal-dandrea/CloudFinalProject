@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Upload</title></head>
+<body>
+  <h2>Upload CSV File</h2>
+  <form method="post" enctype="multipart/form-data">
+    <label for="dataset_type">Select Dataset Type:</label>
+    <select name="dataset_type">
+      <option value="transactions">Transactions</option>
+      <option value="households">Households</option>
+      <option value="products">Products</option>
+    </select><br><br>
+    <input type="file" name="file"><br><br>
+    <button type="submit">Upload</button>
+  </form> 
+  <br><br>
+  <a href="/menu"><button>Back to Menu</button></a> 
+</body>
+</html>
