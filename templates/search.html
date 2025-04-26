@@ -7,7 +7,6 @@
 </form>
 
 {% if df is not none %}
-  <p>If there are no rows, you’ll still see this text.</p>
   <table border="1">
     <tr>{% for col in df.columns %}<th>{{col}}</th>{% endfor %}</tr>
     {% for row in df.itertuples(index=False) %}
